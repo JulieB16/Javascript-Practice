@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width = device-width, initial scale = 1.0">
+<meta name="view-transition" content="same-origin">
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<!--Form Validation-->
+<section id="formValidation">
+    <h1>Form Validation</h1>
+    <div id="error"></div>
+    <form action="/" method="GET">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="text" name="password" id="password">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<!--LCM Calculator-->
+<section id="calcLCM">
+    <h1>LCM Calculator</h1>
+    <div id="errorLCM"></div>
+    <form id="numberInput" action="/" method="GET">
+        <label>Number 1:</label>
+        <br>
+        <input type="text" class="numbers" id="number1">
+        <br>
+        <label>Number 2:</label>
+        <br>
+        <input type="text" class="numbers" id="number2">
+        <br>
+        <input type="submit">
+    </form>
+    <div id="answerLCM">
+        <p>LCM:</p>
+        <p id="answerLCMp"></p>
+    </div>
+</section>
+
+
+<!--Subway Counter--> 
+<section id="Counter">
+<h1>Subway Counter</h1>
+<h3><span style="background-color: rgb(221, 164, 164);">People Entered:</h3>
+<h2 id="count-el">0</h2>
+
+<div class="btn">
+<button id="increment-btn" onclick="increment()">COUNT</button>
+<button id="reset" onclick="reset()">RESET</button>
+<button id="save-btn" onclick="save()">SAVE</button>
+</div>
+
+<p id="save-el">Previous entries: </p>
+
+<hr>
+
+</section>
+
+<!--drum kit-->
+<section id="DrumKit">
+    <h1>Drum Kit</h1>
+    <div id="keys">
+        <div data-key="87" class="key">
+        <kbd>W</kbd>
+        <p>drum 1</p>
+        </div>
+        <div data-key="69" class="key">
+        <kbd>E</kbd>
+        <p>drum 2</p>
+        </div>
+        <div data-key="65" class="key">
+        <kbd>A</kbd>
+        <p>drum 3</p>
+        </div>
+        <div data-key="83" class="key">
+        <kbd>S</kbd>
+        <p>cymbal</p>
+        </div>
+        <div data-key="68" class="key">
+        <kbd>D</kbd>
+        <p>crash</p>
+        </div>
+    </div>
+    <audio data-key="87" src="/sound effects/drum 1 sound effect.mp3"></audio>
+    <audio data-key="69" src="/sound effects/drum 2 sound effect.wav"></audio>
+    <audio data-key="65" src="/sound effects/drum 3 sound effect.mp3"></audio>
+    <audio data-key="83" src="/sound effects/cymbal sound effect.mp3"></audio>
+    <audio data-key="68" src="/sound effects/explosion sound effect.mp3"></audio>
+</section>
+
+<!--Clock-->
+<section id="Clock">
+    <h1>Clock</h1>
+    <div id="clock">
+        <div class="clock-face">
+            <div id="center"><div id="circle"></div></div>
+            <div class="hand" id="secHand"></div>
+            <div class="hand" id="minHand"></div>
+            <div class="hand" id="hrHand"></div>
+        </div>
+    </div>
+</section>
+
+<!--Vending Machine-->
+<h1 id="vendingTitle">Vending Machine</h1>
+<section id="vendingMachine">
+    <div id="mainBox">
+        <div id="window">
+            <hr class="shelves" id="shelf1">
+            <hr class="shelves">
+            <hr class="shelves">
+            <hr class="shelves">
+        </div>
+        <div id="windowSnacks">
+            <div class="snack" id="1"></div>
+            <div class="snack" id="2"></div>
+            <div class="snack" id="3"></div>
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <div class="snack" id="4"></div>
+            <div class="snack" id="5"></div>
+            <div class="snack" id="6"></div>
+            <p>4</p>
+            <p>5</p>
+            <p>6</p>
+            <div class="snack" id="7"></div>
+            <div class="snack" id="8"></div>
+            <div class="snack" id="9"></div>
+            <p>7</p>
+            <p>8</p>
+            <p>9</p>
+            <div class="snack" id="10"></div>
+            <div class="snack" id="11"></div>
+            <div class="snack" id="12"></div>
+            <p>10</p>
+            <p>11</p>
+            <p>12</p>
+        </div>
+        <div id="dropChuteCtn">
+            <div id="dropChute"></div>
+        </div>
+    </div>
+    <div id="sideBox">
+        <input type="text" pattern="[1-9]|1[0-2]" id="foodSelector">
+        <br>
+        <button type="submit" id="enterVendingNum">enter</button>
+        <button type="reset" id="resetVendingBtn">reset</button>
+    </div>
+</section>
+
+<!--Rock Paper Scissors-->
+<h1 id="RPSh1">Rock Paper Scissors</h1>
+<div id="RPSresultMessage">Result</div>
+ <section id="RPS">
+    <div id="playersBtns">
+        <h5>Player</h5>
+        <button type="submit" id="RPSplayerSubmit" onclick="submitPlayerChoice(this)">submit</button>
+        <button id="rock" class="playerChoice">Rock</button>
+        <button id="paper" class="playerChoice">Paper</button>
+        <button id="scissors" class="playerChoice">Scissors</button>
+    </div>
+    <h4>VS</h4>
+    <div id="cpuBtns">
+        <h5>CPU</h5>
+        <p id="cpuChoiceMessage">CPU choice</p>
+        <button class="cpuChoice">Rock</button>
+        <button class="cpuChoice">Paper</button>
+        <button class="cpuChoice">Scissors</button>
+    </div>
+</section>
+
+<!--Tic Tac Toe-->
+<section id="TicTacToe">
+    <div class="board-ctn">
+        <h1>Tic Tac Toe</h1>
+        <p id="TTTplayer1">Player 1</p>
+        <p id="TTTplayer2">Player 2</p>
+        <div class="board" id="board">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+        <div class="winMsg">
+            <div data-winning-msg class="WinMsgText"></div>
+            <button id="restartBtn">Restart</button>
+        </div>
+    </div>
+</section>
+
+<!--Pixel Drawing-->
+<section id="PixelDrawing">
+    <h1>Pixel Drawing</h1>
+    <div id="PDgrid"></div>
+    <input type="color" id="PDcolorInput">
+    <button id="PDeraser">Eraser</button>
+    <button id="PDclear">Clear</button>
+    <p id="rangeNumMsg"></p>
+    <input type="range" id="PDsizeRange" min="5" max="25">
+</section>
+
+<!--Carousel-->
+<section id="carousel">
+<h1 id="Ch1">Sports Carousel</h1>
+<div id="carouselCenter">
+    <button class="carouselBtn carouselBtn--left"><</button>
+    <div id="Ctrack">
+        <ul id="CtrackList">
+            <li class="Cslide">
+                <img src="/Other Images/slide-3.jfif" id="C3">
+            </li>
+            <li class="Cslide">
+                <img src="/Other Images/slide-2.jfif" id="C2">
+            </li>
+            <li class="Cslide">
+                <img src="/Other Images/slide-1.jfif" id="C1">
+            </li>
+        </ul>
+    </div>
+    <button class="carouselBtn carouselBtn--right">></button>
+</div>
+<nav class="carouselNav">
+    <button class="carouselIndicator CI1"></button>
+    <button class="carouselIndicator CI2"></button>
+    <button class="carouselIndicator" id="CI3"></button>
+</nav>
+</section>
+
+<!--Email Contact Form-->
+<section id="emailContactForm">
+    <p id="ECFalertMSG">message sent</p>
+    <h1>Email Contact Form</h1>
+    <form id="EFCform">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea rows="5" cols="19" placeholder="Message" required></textarea>
+        <button id="ECFsubmitBtn" type ="submit" value="send email">Submit</button>
+    </form>
+        
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">emailjs.init('yrdfj1KObCoRmco3M')</script>
+</section>
+
+<script src="script.js" defer></script>
+
+</body>
+
+</html>
